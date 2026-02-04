@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "user-avatar",
+      "description": "Avatar for the user",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29ufGVufDB8fHx8MTc3MDE5MTMxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person"
+    },
+    {
+      "id": "ai-avatar",
+      "description": "Avatar for the AI tutor",
+      "imageUrl": "https://images.unsplash.com/photo-1707353004969-bddabf327b18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyb2JvdCUyMGFic3RyYWN0fGVufDB8fHx8MTc3MDE2NzIyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robot abstract"
+    }
+  ]
 }
