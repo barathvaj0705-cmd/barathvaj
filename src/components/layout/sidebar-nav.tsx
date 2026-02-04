@@ -23,22 +23,20 @@ export function SidebarNav() {
     <SidebarMenu>
       {navItems.map(item => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} legacyBehavior passHref>
-            <SidebarMenuButton
-              asChild
-              isActive={pathname === item.href}
-              tooltip={item.label}
-              className={cn(
-                'group flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary',
-                pathname === item.href && 'bg-primary/10 text-primary'
-              )}
-            >
-              <a>
-                <item.icon className="h-5 w-5" />
-                <span>{item.label}</span>
-              </a>
-            </SidebarMenuButton>
-          </Link>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === item.href}
+            tooltip={item.label}
+            className={cn(
+              'group flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary',
+              pathname === item.href && 'bg-primary/10 text-primary'
+            )}
+          >
+            <Link href={item.href}>
+              <item.icon className="h-5 w-5" />
+              <span>{item.label}</span>
+            </Link>
+          </SidebarMenuButton>
         </SidebarMenuItem>
       ))}
     </SidebarMenu>
