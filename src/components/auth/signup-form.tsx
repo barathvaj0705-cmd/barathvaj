@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import Link from 'next/link';
 import { UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,7 +22,7 @@ function SubmitButton() {
 }
 
 export function SignupForm() {
-  const [state, action] = useFormState(signUp, undefined);
+  const [state, action] = useActionState(signUp, undefined);
 
   return (
     <form action={action}>
