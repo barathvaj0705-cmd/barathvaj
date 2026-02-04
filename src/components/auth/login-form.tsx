@@ -29,7 +29,12 @@ export function LoginForm() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/dashboard');
     } catch (err: any) {
-      setError(err.message);
+      if (err.code === 'auth/invalid-credential') {
+        setError('Invalid email or password. Please try again.');
+      } else {
+        setError('An unexpected error occurred during sign-in.');
+        console.error(err);
+      }
     } finally {
       setIsLoading(false);
     }

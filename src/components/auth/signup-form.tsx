@@ -48,7 +48,18 @@ export function SignupForm() {
 
       router.push('/dashboard');
     } catch (err: any) {
-      setError(err.message);
+        switch (err.code) {
+            case 'auth/email-already-in-use':
+              setError('An account with this email address already exists.');
+              break;
+            case 'auth/weak-password':
+              setError('The password is too weak. Please use at least 6 characters.');
+              break;
+            default:
+              setError('An unexpected error occurred during sign-up.');
+              console.error(err);
+              break;
+        }
     } finally {
       setIsLoading(false);
     }
