@@ -29,11 +29,17 @@ export function LoginForm() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/dashboard');
     } catch (err: any) {
-      if (err.code === 'auth/invalid-credential') {
-        setError('Invalid email or password. Please try again.');
-      } else {
-        setError('An unexpected error occurred during sign-in.');
-        console.error(err);
+      switch (err.code) {
+        case 'auth/invalid-credential':
+          setError('Invalid email or password. Please try again.');
+          break;
+        case 'auth/too-many-requests':
+          setError('Access to this account has been temporarily disabled due to many failed login attempts. You can try again later.');
+          break;
+        default:
+          setError('An unexpected error occurred during sign-in.');
+          console.error(err);
+          break;
       }
     } finally {
       setIsLoading(false);
