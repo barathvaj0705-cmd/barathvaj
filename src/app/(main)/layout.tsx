@@ -1,6 +1,9 @@
-import { redirect } from 'next/navigation';
-import { BrainCircuit, Menu } from 'lucide-react';
-import { getAuthenticatedUser } from '@/lib/auth';
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { BrainCircuit, Loader2, Menu } from 'lucide-react';
+import { useUser } from '@/firebase';
 import {
   SidebarProvider,
   Sidebar,
@@ -13,14 +16,30 @@ import { Button } from '@/components/ui/button';
 import { UserNav } from '@/components/layout/user-nav';
 import { SidebarNav } from '@/components/layout/sidebar-nav';
 
-export default async function MainLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const user = await getAuthenticatedUser();
+  const { user, isUserLoading } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isUserLoading && !user) {
+      router.replace('/login');
+    }
+  }, [user, isUserLoading, router]);
+
+  if (isUserLoading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
   if (!user) {
-    redirect('/login');
+    return null;
   }
 
   return (

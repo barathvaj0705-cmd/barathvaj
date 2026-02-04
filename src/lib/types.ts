@@ -1,9 +1,3 @@
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-};
-
 export type QuizTopic = 'Algebra' | 'Biology' | 'History';
 
 export type Question = {
