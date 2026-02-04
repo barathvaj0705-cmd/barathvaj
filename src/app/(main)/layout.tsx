@@ -48,11 +48,9 @@ export default function MainLayout({
         <Sidebar>
           <SidebarHeader className="p-4">
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <SidebarTrigger>
-                  <Menu />
-                </SidebarTrigger>
-              </Button>
+              <SidebarTrigger className="md:hidden">
+                <Menu />
+              </SidebarTrigger>
               <BrainCircuit className="h-8 w-8 text-primary" />
               <div className="text-xl font-bold tracking-tight text-foreground group-data-[collapsible=icon]:hidden">
                 StudyBuddy AI
