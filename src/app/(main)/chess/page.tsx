@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardDescription,
 } from '@/components/ui/card';
-import { ChessRook } from 'lucide-react';
+import { Rook } from 'lucide-react';
 
 export default function ChessPage() {
   return (
@@ -24,7 +24,7 @@ export default function ChessPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center p-16">
-          <ChessRook className="h-24 w-24 text-muted-foreground" />
+          <Rook className="h-24 w-24 text-muted-foreground" />
           <p className="mt-4 text-muted-foreground">
             Get ready to sharpen your chess skills!
           </p>
