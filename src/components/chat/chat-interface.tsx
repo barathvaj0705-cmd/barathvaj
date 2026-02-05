@@ -55,7 +55,7 @@ export function ChatInterface() {
   };
 
   return (
-    <div className="flex h-full flex-col bg-card border-t">
+    <div className="flex flex-1 flex-col border-t bg-card min-h-0">
       <ScrollArea className="flex-1" ref={scrollAreaRef}>
         <div className="p-4 space-y-6">
           {messages.map(message => (
