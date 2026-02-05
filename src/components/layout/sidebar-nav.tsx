@@ -6,7 +6,7 @@ import {
   ClipboardCheck,
   LayoutDashboard,
   MessageCircle,
-  Rook,
+  Crown,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
@@ -19,7 +19,7 @@ const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/chat', label: 'AI Tutor', icon: MessageCircle },
   { href: '/quiz', label: 'Quizzes', icon: ClipboardCheck },
-  { href: '/chess', label: 'Chess', icon: Rook },
+  { href: '/chess', label: 'Chess', icon: Crown },
 ];
 
 export function SidebarNav() {
