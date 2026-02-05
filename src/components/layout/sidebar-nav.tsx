@@ -2,7 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ClipboardCheck, LayoutDashboard, MessageCircle } from 'lucide-react';
+import {
+  ClipboardCheck,
+  LayoutDashboard,
+  MessageCircle,
+  ChessRook,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   SidebarMenu,
@@ -14,6 +19,7 @@ const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/chat', label: 'AI Tutor', icon: MessageCircle },
   { href: '/quiz', label: 'Quizzes', icon: ClipboardCheck },
+  { href: '/chess', label: 'Chess', icon: ChessRook },
 ];
 
 export function SidebarNav() {
