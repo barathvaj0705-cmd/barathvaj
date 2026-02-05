@@ -66,9 +66,9 @@ export default function MainLayout({
             <SidebarTrigger className="md:hidden"/>
             <UserNav user={user} />
           </header>
-          <main className="flex-1 overflow-y-auto p-4 md:p-8">
+          <div className="flex-1 overflow-y-auto">
             {children}
-          </main>
+          </div>
         </SidebarInset>
       </div>
     </SidebarProvider>

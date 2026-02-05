@@ -31,7 +31,7 @@ export default function DashboardPage() {
 
   if (isLoading || !user) {
     return (
-        <div className="space-y-8">
+        <div className="space-y-8 p-4 md:p-8">
             <div>
                 <Skeleton className="h-10 w-1/2" />
                 <Skeleton className="h-4 w-1/3 mt-2" />
@@ -49,7 +49,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 p-4 md:p-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Welcome back, {user?.displayName?.split(' ')[0]}!</h1>
         <p className="text-muted-foreground">Here's a summary of your learning journey.</p>
