@@ -48,7 +48,7 @@ export default function MainLayout({
         <Sidebar>
           <SidebarHeader className="p-4">
             <div className="flex items-center gap-2">
-              <SidebarTrigger className="md:hidden">
+              <SidebarTrigger>
                 <Menu />
               </SidebarTrigger>
               <BrainCircuit className="h-8 w-8 text-primary" />
@@ -66,7 +66,7 @@ export default function MainLayout({
             <SidebarTrigger className="md:hidden"/>
             <UserNav user={user} />
           </header>
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 min-h-0">
             {children}
           </div>
         </SidebarInset>
